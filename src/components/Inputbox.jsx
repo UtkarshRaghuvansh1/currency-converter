@@ -23,6 +23,7 @@ function InputBox({
   currencyDisabled = false,
   className = "",
 }) {
+  //   console.log("In the Inputbox comp");
   const amountId = useId();
   return (
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
