@@ -67,7 +67,7 @@ function App() {
             <div className="w-full mt-1 mb-4">
               <InputBox
                 label="To"
-                amount={Number(convertedAmount).toFixed(2)}
+                amount={convertedAmount}
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
                 amountDisabled
@@ -85,7 +85,7 @@ function App() {
           {convertedAmount > 0 && (
             <div className="mt-6 text-center">
               <p className="text-lg font-medium text-gray-700">
-                {amount} {from.toUpperCase()} ={" "}
+                {Number(amount).toFixed(2)} {from.toUpperCase()} ={" "}
                 <span className="text-blue-700 font-semibold">
                   {Number(convertedAmount).toFixed(2)} {to.toUpperCase()}
                 </span>
