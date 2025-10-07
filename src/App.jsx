@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InputBox } from "./components/index.js";
 import useCurrencyInfo from "./custom_hooks/useCurrencyInfo.js";
-import "./App.css";
+// import "./App.css";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -34,7 +34,10 @@ function App() {
         backgroundImage: `url('${BackgroundImage}')`,
       }}
     >
-      <div className="w-full">
+      <div className="w-full max-w-md bg-white/40 backdrop-blur-md rounded-2xl shadow-lg border border-white/30 p-6">
+        <h1 className="text-2xl font-bold text-center text-blue-700 mb-6">
+          Currency Converter
+        </h1>
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
@@ -78,6 +81,17 @@ function App() {
               Convert {from.toUpperCase()} to {to.toUpperCase()}
             </button>
           </form>
+          {/* Converted Amount Display */}
+          {convertedAmount > 0 && (
+            <div className="mt-6 text-center">
+              <p className="text-lg font-medium text-gray-700">
+                {amount} {from.toUpperCase()} ={" "}
+                <span className="text-blue-700 font-semibold">
+                  {Number(convertedAmount).toFixed(2)} {to.toUpperCase()}
+                </span>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
