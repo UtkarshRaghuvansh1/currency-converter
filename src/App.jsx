@@ -58,7 +58,7 @@ function App() {
             <div className="relative w-full h-0.5">
               <button
                 type="button"
-                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5"
+                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2  hover:bg-blue-700 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5 shadow-md transition-transform active:scale-95"
                 onClick={swap}
               >
                 swap
@@ -67,7 +67,7 @@ function App() {
             <div className="w-full mt-1 mb-4">
               <InputBox
                 label="To"
-                amount={convertedAmount}
+                amount={Number(convertedAmount).toFixed(2)}
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
                 amountDisabled
@@ -76,7 +76,7 @@ function App() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 sm:py-4 rounded-2xl text-base sm:text-lg shadow-md transition-transform active:scale-95"
             >
               Convert {from.toUpperCase()} to {to.toUpperCase()}
             </button>
